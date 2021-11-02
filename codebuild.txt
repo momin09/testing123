@@ -1,2 +1,0 @@
-1. CodeBuild에서 ECR로 접근하기 위해 사용되는 IAM Policy
-    ==> AmazonEC2ContainerRegistryPowerUser
