@@ -1,0 +1,19 @@
+CodeBuild에서 ECR에 접근하기 위한 정책 생성
+{
+      "Statement": [
+          {
+              "Action": [
+                  "ecr:BatchCheckLayerAvailability",
+                  "ecr:CompleteLayerUpload",
+                  "ecr:GetAuthorizationToken",
+                  "ecr:InitiateLayerUpload",
+                  "ecr:PutImage",
+                  "ecr:UploadLayerPart"
+              ],
+              "Resource": "*",
+              "Effect": "Allow"
+          }
+      ],
+      "Version": "2012-10-17"
+  }
+이름: CodeBuildECRPolicy-cicd-demo-ap-northeast-2
