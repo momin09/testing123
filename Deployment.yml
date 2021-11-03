@@ -23,7 +23,7 @@ spec:
         imagePullPolicy: Always
         securityContext:
           privileged: false
-          readOnlyRootfilesystem: true
+          readOnlyRootFilesystem: true
           allowPrivilegeEscalation: false
         ports:
         - containerPort: 80
