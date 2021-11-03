@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-k8s
+  name: eks-deploy
 spec:
-  replicas: 3
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -11,18 +11,19 @@ spec:
       maxSurge: 2
     selector:
       matchLabels:
-        app: hello-k8s
+        app: eks
     template:
       metadata:
         labels:
-          app: hello-k8s
+          app: eks
       spec:
         containers:
         - name: hello-k8s
-          image: 388265291349.dkr.ecr.ap-northeast-2.amazonaws.com/testing_goorm123:latest
+          image: CONTAINER_IMAGE
+          imagePullPolicy: Always
           securityContext:
             privileged: false
             readOnlyRootfilesystem: true
             allowPrivilegeEscalation: false
           ports:
-          - ContainerPort: 8080
+          - containerPort: 80
