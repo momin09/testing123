@@ -19,7 +19,7 @@ spec:
       spec:
         containers:
         - name: hello-k8s
-          image: [CONTAINER_IMAGE]
+          image: 388265291349.dkr.ecr.ap-northeast-2.amazonaws.com/testing_goorm123:latest
           securityContext:
             privileged: false
             readOnlyRootfilesystem: true
