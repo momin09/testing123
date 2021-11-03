@@ -34,5 +34,5 @@ phases:
     commands:
       - echo Build completed on `date`
       - AWS_ECR_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - sed -i 's@CONTAINER_IMAGE@'"$REPOSITORY_URI"'@' ./hello-k8s.yml
-      - kubectl apply -f hello-k8s.yml
+      - sed -i 's@AWS_ECR_URI@'"$REPOSITORY_URI"'@' Deployment.yml
+      - kubectl apply -f Deployment.yml
