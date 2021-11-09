@@ -41,3 +41,4 @@ phases:
       - sed -i 's@AWS_ECR_URI@'"$AWS_ECR_URI"'@' Deployment.yml
       - kubectl apply -f Deployment.yml
       - kubectl apply -f Service.yml
+      - kubectl apply -f ingress.yaml
