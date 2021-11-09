@@ -7,7 +7,7 @@ spec:
   - port: 9001
     targetPort: 80
   selector:
-    app: eks-svc
+    app: eks
   type: NodePort
 ---
 apiVersion: v1

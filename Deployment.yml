@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: hello-k8s
-        image: AWS_ECR_URI
+        image: nginx
         imagePullPolicy: Always
         securityContext:
           privileged: false
