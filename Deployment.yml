@@ -36,14 +36,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: guestsrv
+      app: deploy2-guestsrv
   template:
     metadata:
       labels:
-        app: guestsrv
+        app: deploy2-guestsrv
     spec:
       containers:
-      - name: pod-guest
+      - name: deploy2-guestsrv
         image: gcr.io/google-samples/kubernetes-bootcamp:v1
         ports:
         - containerPort: 8080
@@ -56,14 +56,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: adminsrv
+      app: deploy3-adminsrv
   template:
     metadata:
       labels:
-        app: adminsrv
+        app: deploy3-adminsrv
     spec:
       containers:
-      - name: pod-admin
+      - name: deploy3-adminsrv
         image: k8s.gcr.io/echoserver:1.5
         ports:
         - containerPort: 8080
