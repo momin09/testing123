@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: "simple-ingress"
+  name: ikuzoIngress
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -10,20 +10,20 @@ spec:
   rules:
     - http:
         paths:
-          - path: /guest
+          - path: [/guest]
             pathType: Prefix
             backend:
               service:
-                name: "deploy2-guestsrv"
+                name: ikuzoWeb-svc
                 port:
-                  number: 9002
-          - path: /admin
-            pathType: Prefix
-            backend:
-              service:
-                name: "deploy3-adminsrv"
-                port:
-                  number: 9003
+                  number: 3000
+#          - path: /admin
+#            pathType: Prefix
+#            backend:
+#              service:
+#                name: "deploy3-adminsrv"
+#                port:
+#                  number: 9003
 #          - path: /
 #            pathType: Prefix
 #            backend:

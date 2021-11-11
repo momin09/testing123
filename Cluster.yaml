@@ -1,0 +1,11 @@
+kind: ClusterConfig
+
+metadata:
+  name: goormIkuzo
+  region: ap-northeast-2
+
+managedNodeGroups:
+  - name: main
+    instanceType: t3.small
+    desiredCapacity: 3
+    privateNetworking: true

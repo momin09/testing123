@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegramBot
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: eks
+  template:
+    metadata:
+      labels:
+        app: eks
+    spec:
+      containers:
+      - name: telegramBot
+        image: [Update Image]
+        imagePullPolicy: Always
+        securityContext:
+          privileged: false
+          readOnlyRootFilesystem: true
+          allowPrivilegeEscalation: false
+        ports:
+        - containerPort: [8080]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ikuzoWeb
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: ikuzoWeb
+  template:
+    metadata:
+      labels:
+        app: ikuzoWeb
+    spec:
+      containers:
+      - name: ikuzoWeb
+        image: [Update Image]
+        imagePullPolicy: Always
+        securityContext:
+          privileged: false
+          readOnlyRootFilesystem: true
+          allowPrivilegeEscalation: false
+        ports:
+        - containerPort: 8080
