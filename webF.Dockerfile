@@ -10,7 +10,7 @@ WORKDIR /app
 
 RUN npm install
 
-WORKDIR /appclient
+WORKDIR /app/client
 
 RUN npm install
 
