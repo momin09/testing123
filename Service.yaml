@@ -18,6 +18,7 @@ metadata:
   name: ikuzo-web-front-svc
   annotations:
     alb.ingress.kubernetes.io/healthcheck-path: "/front/aws"
+spec:
   ports:
     - name: ikuzo-web-front-port
       port: 9002
