@@ -8,11 +8,11 @@ ADD . /app
 
 WORKDIR /app
 
-RUN npm install
+RUN npm install --silent
 
 WORKDIR /app/client
 
-RUN npm install
+RUN npm install --silent
 
 EXPOSE 3000
 
