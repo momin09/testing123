@@ -10,20 +10,20 @@ spec:
   rules:
     - http:
         paths:
-          - path: [/guest]
+          - path: /front
             pathType: Prefix
             backend:
               service:
-                name: ikuzoWeb-svc
+                name: ikuzoWebFront_SVC
                 port:
-                  number: 3000
-#          - path: /admin
-#            pathType: Prefix
-#            backend:
-#              service:
-#                name: "deploy3-adminsrv"
-#                port:
-#                  number: 9003
+                  number: 9002
+          - path: /back
+            pathType: Prefix
+            backend:
+              service:
+                name: ikuzoWebBack_SVC
+                port:
+                  number: 9003
 #          - path: /
 #            pathType: Prefix
 #            backend:

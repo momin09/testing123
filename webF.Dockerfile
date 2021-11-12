@@ -6,7 +6,11 @@ RUN mkdir -p /app
 
 ADD . /app
 
-WORKDIR /app/client
+WORKDIR /app
+
+RUN npm install
+
+WORKDIR /appclient
 
 RUN npm install
 
