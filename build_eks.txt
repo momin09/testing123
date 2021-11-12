@@ -1,0 +1,32 @@
+Error 1
+- echo Installing kubectl
+- curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.21.2/2021-07-05/bin/linux/amd64/kubectl
+- chmod +x ./kubectl
+- mv ./kubectl /usr/local/bin/kubectl
+- mkdir ~/.kube
+- aws eks --region ap-northeast-2 update-kubeconfig --name eks
+이 곳에서 에러 발생
+ {
+     An error occurred (AccessDeniedException) when calling the DescribeCluster operation: User: arn:aws:sts::388265291349:assumed-role/codebuild-testingGit-service-role/AWSCodeBuild-461937d3-8c53-46e5-8f66-4d35177bfe4f is not authorized to perform: eks:DescribeCluster on resource: arn:aws:eks:ap-northeast-2:388265291349:cluster/eks
+ }
+
+
+ 참고: https://potato-yong.tistory.com/130
+ 참고: https://docs.aws.amazon.com/ko_kr/codebuild/latest/userguide/setting-up.html
+ 참고: https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html
+
+
+해결 방법: Codebuild 역할에 권한 추가
+ #해당하는 Role에 정책 이름 추가
+ aws iam put-role-policy --role-name codebuild-testingGit-service-role --policy-name eks-describe --policy-document file:///tmp/iam-role-policy
+
+ ROLE="    - rolearn: arn:aws:iam::$ACCOUNT_ID:role/codebuild-testingGit-service-role\n      username: build\n      groups:\n        - system:masters"
+
+ kubectl get -n kube-system configmap/aws-auth -o yaml | awk "/mapRoles: \|/{print;print \"$ROLE\";next}1" > /tmp/aws-auth-patch.yml
+
+kubectl patch configmap/aws-auth -n kube-system --patch "$(cat /tmp/aws-auth-patch.yml)"
+
+
+
+
+2. $IMAGE_REPO_NAME
