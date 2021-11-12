@@ -3,7 +3,6 @@ const app = express();
 const { Client } = require("pg");
 const Query = require('pg').Query
 const cors = require('cors');
-const Auth = require('./Auth')
 
 const port = 3100;
 
@@ -13,7 +12,7 @@ app.use(cors());
 //connect with db
 var client = new Client({ 
     user : 'postgres',
-    host : Auth,
+    host : `HOST`,
     database : 'ExchangeRate',
     password : "12341234",
     port : 5432, })
