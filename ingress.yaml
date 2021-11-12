@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ikuzoIngress
+  name: ikuzo-ingress
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -14,14 +14,14 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ikuzo-web-front_svc
+                name: ikuzo-web-front-svc
                 port:
                   number: 9002
           - path: /back
             pathType: Prefix
             backend:
               service:
-                name: ikuzo-web-back_svc
+                name: ikuzo-web-back-svc
                 port:
                   number: 9003
 #          - path: /
