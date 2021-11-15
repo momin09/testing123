@@ -1,6 +1,6 @@
 # Use the official image as a parent image
 
-FROM node:current-slim
+FROM node:16-alpine3.12
 
 # Set the working directory.
 WORKDIR /app
