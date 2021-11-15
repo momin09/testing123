@@ -10,9 +10,9 @@ WORKDIR /app
 
 RUN npm install --silent
 
-# WORKDIR /app/client
+WORKDIR /app/client
 
-# RUN npm install --silent
+RUN npm install --silent
 
 EXPOSE 3000
 
