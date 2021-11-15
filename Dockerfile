@@ -10,6 +10,8 @@ WORKDIR /app
 
 RUN npm install --silent
 
+RUN npm install @babel/core --save
+
 WORKDIR /app/client
 
 RUN npm install
