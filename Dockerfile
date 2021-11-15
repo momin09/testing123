@@ -1,6 +1,6 @@
 #Dockerfile With Client
 
-FROM node:16
+FROM node:17
 
 RUN mkdir -p /app
 
@@ -10,13 +10,11 @@ WORKDIR /app
 
 RUN npm install --silent
 
-RUN npm install babel-loader @babel/core
-
 WORKDIR /app/client
 
 RUN npm install
 
-
+RUN npm install babel-loader @babel/core
 
 EXPOSE 3000
 
