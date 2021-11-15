@@ -1,6 +1,6 @@
 #Dockerfile With Client
 
-FROM node:16
+FROM node:current-slim
 
 RUN mkdir -p /app
 
@@ -8,11 +8,11 @@ ADD . /app
 
 WORKDIR /app
 
-RUN npm install --silent
+# RUN npm install --silent
 
 WORKDIR /app/client
 
-RUN npm install --silent
+# RUN npm install --silent
 
 EXPOSE 3000
 
