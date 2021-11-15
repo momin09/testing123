@@ -1,6 +1,6 @@
 #Dockerfile With Client
 
-FROM node:12
+FROM node:16-alpine3.12 as builder
 
 RUN mkdir -p /app
 
@@ -8,14 +8,12 @@ ADD . /app
 
 WORKDIR /app
 
-RUN npm install 
-
-RUN npm install @babel/core --save
+RUN yarn install
 
 WORKDIR /app/client
 
-RUN npm install
+RUN yarn install
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
