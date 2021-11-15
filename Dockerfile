@@ -10,9 +10,13 @@ WORKDIR /app
 
 RUN npm install --silent
 
+RUN npm install babel-loader @babel/core
+
 WORKDIR /app/client
 
-RUN npm install --silent
+RUN npm install
+
+
 
 EXPOSE 3000
 
