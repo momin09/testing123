@@ -8,7 +8,7 @@ ADD . /app
 
 WORKDIR /app
 
-RUN npm install --silent
+RUN npm install 
 
 RUN npm install @babel/core --save
 
