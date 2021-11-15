@@ -8,6 +8,9 @@ ADD . /app
 
 WORKDIR /app
 
+RUN yarn cache clean
+
+
 RUN yarn install
 
 WORKDIR /app/client
