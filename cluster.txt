@@ -1,0 +1,16 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+    name: basic-cluster [My Cluster name]
+    region: ap-northeast-2 [My region]
+
+nodeGroups:
+    - name: ng1
+  instanceType: m5.large
+  desiredCapacity: 2
+  # privateNetworking must be explicitly set for a fully-private cluster
+  # Rather than defaulting this field to `true`,
+  # we require users to explicitly set it to make the behaviour
+  # explicit and avoid confusion.
+  privateNetworking: true

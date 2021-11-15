@@ -1,0 +1,14 @@
+1. CodeBuild에서 ECR로 접근하기 위해 사용되는 IAM Policy
+    ==> AmazonEC2ContainerRegistryPowerUser
+
+2. Docker image build 과정 설명:
+    ==> https://darkrasid.github.io/docker/container/image/create/2017/04/19/docker-image-create.html
+
+
+---
+EKS클러스터에 실제 어플리케이션 배포를 수행하는 CodeBuild는
+EKS클러스터에 kubectl 명령을 보낼 수 있는 Role Assume해서 어플리케이션 수행
+
+
+
+973fae5

@@ -1,0 +1,23 @@
+오류 발생:
+default-http-backend:80 (<error: endpoints "default-http-backend" not found>)
+==> 무슨 오류지...?
+
+참고: https://kim-dragon.tistory.com/111
+ 1. ODIC Install
+ 2. IAM Policy Create
+참고: https://jenakim47.tistory.com/60
+ 1. Worker Node Role에 정책 추가
+ 2. ALB-ingress-controller 배포
+ 3. Ingress, Deployment, Service 배포
+
+
+
+
+ 참고: https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/aws-load-balancer-controller.html#lbc-install-controller
+ 참고: https://aws-eks-web-application.workshop.aws/ko/60-ingress-controller/100-launch-alb.html
+ 참고(OIDC 생성): https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/enable-iam-roles-for-service-accounts.html
+ 1. 클러스터에 대한 OIDC 생성
+    ==> aws eks describe-cluster --name eks-demo --query "cluster.identity.oidc.issuer" --output text 
+    이후 반환 값 /id/ 이후의 값을 복사 후
+    aws iam list-open-id-connect-providers | grep [id]
+    ==> 결과값 출력시 이미 존재하는 것이고 없으면 생성 작업 수행해야함!

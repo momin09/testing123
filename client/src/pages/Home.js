@@ -6,7 +6,7 @@ import ChatBotManual from '../components/ChatBotManual';
 import axios from 'axios';
 
 
-var url = 'http://k8s-default-ikuzoing-36a5492175-941421265.ap-northeast-2.elb.amazonaws.com/back'
+// var url = 'http://k8s-default-ikuzoing-36a5492175-941421265.ap-northeast-2.elb.amazonaws.com/back'
 
 function Home() {
     const [date,setDate] = useState('');
@@ -42,107 +42,107 @@ function Home() {
     const [aedTts, setAedTts] = useState('');
 
     useEffect(() => {
-        axios.get('url/api/today/eur')
+        axios.get('http://localhost:3100/api/today/eur')
             .then(res => setDate(res.data[0].updateDate))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/eur')
+        axios.get('http://localhost:3100/api/today/eur')
             .then(res => setEurTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/eur')
+        axios.get('http://localhost:3100/api/today/eur')
             .then(res => setEurTts(res.data[1].tts))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/cad')
+        axios.get('http://localhost:3100/api/today/cad')
             .then(res => setCadTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/cad')
+        axios.get('http://localhost:3100/api/today/cad')
             .then(res => setCadTts(res.data[1].tts))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/aud')
+        axios.get('http://localhost:3100/api/today/aud')
             .then(res => setAudTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/aud')
+        axios.get('http://localhost:3100/api/today/aud')
             .then(res => setAudTts(res.data[1].tts))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/cny')
+        axios.get('http://localhost:3100/api/today/cny')
             .then(res => setCnyTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/cny')
+        axios.get('http://localhost:3100/api/today/cny')
             .then(res => setCnyTts(res.data[1].tts))
     },[])
 
     useEffect(() => {
-        axios.get('url:3100/api/today/krw')
+        axios.get('http://localhost:3100:3100/api/today/krw')
             .then(res => setKrwTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/krw')
+        axios.get('http://localhost:3100/api/today/krw')
             .then(res => setKrwTts(res.data[1].tts))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/jpy_100')
+        axios.get('http://localhost:3100/api/today/jpy_100')
             .then(res => setJpyTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/jpy_100')
+        axios.get('http://localhost:3100/api/today/jpy_100')
             .then(res => setJpyTts(res.data[1].tts))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/usd')
+        axios.get('http://localhost:3100/api/today/usd')
             .then(res => setUsdTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/usd')
+        axios.get('http://localhost:3100/api/today/usd')
             .then(res => setUsdTts(res.data[1].tts))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/gbp')
+        axios.get('http://localhost:3100/api/today/gbp')
             .then(res => setGbpTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/gbp')
+        axios.get('http://localhost:3100/api/today/gbp')
             .then(res => setGbpTts(res.data[1].tts))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/aed')
+        axios.get('http://localhost:3100/api/today/aed')
             .then(res => setAedTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/aed')
+        axios.get('http://localhost:3100/api/today/aed')
             .then(res => setAedTts(res.data[1].tts))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/hkd')
+        axios.get('http://localhost:3100/api/today/hkd')
             .then(res => setHkdTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('url/api/today/hkd')
+        axios.get('http://localhost:3100/api/today/hkd')
             .then(res => setHkdTts(res.data[1].tts))
     },[])
 
