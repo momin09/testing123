@@ -2,6 +2,8 @@
 
 FROM node:16-alpine3.12
 
+RUN npm install --global yarn
+
 RUN mkdir -p /app
 
 ADD . /app
