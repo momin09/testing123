@@ -6,7 +6,7 @@ import ChatBotManual from '../components/ChatBotManual';
 import axios from 'axios';
 
 
-
+var url = 'http://k8s-default-ikuzoing-36a5492175-941421265.ap-northeast-2.elb.amazonaws.com/back'
 
 function Home() {
     const [date,setDate] = useState('');
@@ -42,17 +42,17 @@ function Home() {
     const [aedTts, setAedTts] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:3100/api/today/eur')
+        axios.get('url/api/today/eur')
             .then(res => setDate(res.data[0].updateDate))
     },[])
 
     useEffect(() => {
-        axios.get('http://localhost:3100/api/today/eur')
+        axios.get('url/api/today/eur')
             .then(res => setEurTtb(res.data[1].ttb))
     },[])
 
     useEffect(() => {
-        axios.get('http://localhost:3100/api/today/eur')
+        axios.get('url/api/today/eur')
             .then(res => setEurTts(res.data[1].tts))
     },[])
 
