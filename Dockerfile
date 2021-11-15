@@ -8,15 +8,14 @@ ADD . /app
 
 WORKDIR /app
 
-RUN yarn cache clean
+#RUN yarn cache clean
 
-
-RUN yarn install
+RUN npm install
 
 WORKDIR /app/client
 
-RUN yarn install
+RUN npm install
 
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
