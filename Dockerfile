@@ -1,6 +1,6 @@
 #Dockerfile With Client
 
-FROM node:current-slim
+FROM node:16
 
 RUN mkdir -p /app
 
