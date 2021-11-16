@@ -57,5 +57,5 @@ phases:
       - sed -i 's@ECR_WEBB_IMAGE@'"$webB_URI"'@' Deployment.yaml
       - kubectl apply -f Deployment.yaml
       - kubectl apply -f Service.yaml
-      - kubectl apply -f Ingress.yaml
+      - kubectl apply -f IngressIku.yaml
 
