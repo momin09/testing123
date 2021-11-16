@@ -14,14 +14,14 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: ikuzo-web-front-svc
+                name: "front"
                 port:
                   number: 3000
           - path: /api
             pathType: Prefix
             backend:
               service:
-                name: ikuzo-web-back-svc
+                name: "back"
                 port:
                   number: 3100
 #          - path: /

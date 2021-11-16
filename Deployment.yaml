@@ -31,7 +31,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ikuzo-web-front
+  name: front
 spec:
   replicas: 3
   strategy:
@@ -41,14 +41,14 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      app: ikuzo-web-front
+      app: front
   template:
     metadata:
       labels:
-        app: ikuzo-web-front
+        app: front
     spec:
       containers:
-      - name: ikuzo-web-front
+      - name: front
         image: ECR_WEBF_IMAGE
         imagePullPolicy: Always
         securityContext:
@@ -61,7 +61,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ikuzo-web-back
+  name: back
 spec:
   replicas: 3
   strategy:
@@ -71,14 +71,14 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      app: ikuzo-web-back
+      app: back
   template:
     metadata:
       labels:
-        app: ikuzo-web-back
+        app: back
     spec:
       containers:
-      - name: ikuzo-web-back
+      - name: back
         image: ECR_WEBB_IMAGE
         imagePullPolicy: Always
         securityContext:
