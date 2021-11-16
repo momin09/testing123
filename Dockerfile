@@ -1,12 +1,10 @@
 #Dockerfile With Client
 
-FROM node:16
+FROM node:16-alpine3.12
 
 RUN apt-get update && apt-get upgrade -y
 
 RUN mkdir -p /app
-
-RUN YARN_CACHE_FOLDER=/somefolder yarn --production
 
 ADD . /app
 
@@ -14,12 +12,12 @@ WORKDIR /app
 
 #RUN yarn cache clean
 
-RUN yarn install
+RUN npm install
 
 WORKDIR /app/client
 
-RUN yarn install
+RUN npm install
 
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
