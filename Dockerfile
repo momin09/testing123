@@ -2,7 +2,6 @@
 
 FROM node:16-alpine3.12
 
-RUN apt-get update && apt-get upgrade -y
 
 RUN mkdir -p /app
 
