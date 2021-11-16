@@ -6,6 +6,8 @@ RUN apt-get update && apt-get upgrade -y
 
 RUN mkdir -p /app
 
+RUN YARN_CACHE_FOLDER=/somefolder yarn --production
+
 ADD . /app
 
 WORKDIR /app
