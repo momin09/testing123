@@ -16,14 +16,14 @@ spec:
               service:
                 name: ikuzo-web-front-svc
                 port:
-                  number: 9002
-          - path: /back
+                  number: 3000
+          - path: /api
             pathType: Prefix
             backend:
               service:
                 name: ikuzo-web-back-svc
                 port:
-                  number: 9003
+                  number: 3100
 #          - path: /
 #            pathType: Prefix
 #            backend:
