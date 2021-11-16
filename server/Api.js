@@ -1,18 +1,19 @@
-const express = require('express'); //express를 설치했기 때문에 가져올 수 있다.
+const express = require('express') //express를 설치했기 때문에 가져올 수 있다.
 const app = express();
 const { Client } = require("pg");
-const Query = require('pg').Query;
+const Query = require('pg').Query
 const cors = require('cors');
+const Auth = 'exchangerate-db.cbn4atioh7jm.ap-northeast-2.rds.amazonaws.com'
 
 const PORT = 3100;
-const URL = 'k8s-default-ikuzoing-36a5492175-941421265.ap-northeast-2.elb.amazonaws.com/back';
+const HOST = '0.0.0.0';
 
 app.use(cors());
 
 //connect with db
 var client = new Client({ 
     user : 'postgres',
-    host : 'HOST',
+    host : Auth,
     database : 'ExchangeRate',
     password : "12341234",
     port : 5432, })
@@ -85,6 +86,6 @@ app.get('/api/alltime/:currencyCode', function(req, res, next) {
 });
 
 
-app.listen(PORT, URL,() => {
-    console.log(`Running on http://${URL}:${PORT}`);
+app.listen(PORT, HOST,() => {
+    console.log(`Running on http://${HOST}:${PORT}`);
 });

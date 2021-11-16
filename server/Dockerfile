@@ -1,6 +1,6 @@
 # Use the official image as a parent image
 
-FROM node:16-alpine3.12
+FROM node:current-slim
 
 # Set the working directory.
 WORKDIR /app
@@ -19,3 +19,4 @@ EXPOSE 3100
 
 # Run the specified command within the container
 CMD ["node", "Api.js"]
+
