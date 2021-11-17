@@ -20,7 +20,7 @@ function LineGraph() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://k8s-default-backendi-6566bc7d31-326551117.ap-northeast-2.elb.amazonaws.com/api/alltime/ '+targetCountry.toLowerCase())
+        axios.get('https://aws-eks-web-application.workshop.aws/ko/70-deploy-service/300-frontend.htmlk8s-default-ikuzoing-36a5492175-461592724.ap-northeast-2.elb.amazonaws.com/api/alltime/ '+targetCountry.toLowerCase())
         .then(res => {
             console.log(res.data)
             const temp = res.data
