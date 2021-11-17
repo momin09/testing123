@@ -34,7 +34,7 @@ phases:
 #      - docker pull leedowon/goormtest:1.1
 #      - docker images
       - echo Building the Docker image...
-      - sed -i 's@HOST@'"$BackName"'@' ./server/Api.js
+#      - sed -i 's@HOST@'"$BackName"'@' ./server/Api.js
     # 푸시코드(?)를 분리해서 각자의 태그에 배분 
       - docker build -t $IMAGE_REPO_NAME:$webF_IMAGE_TAG ./client
       - docker build -t $IMAGE_REPO_NAME:$webB_IMAGE_TAG ./server
